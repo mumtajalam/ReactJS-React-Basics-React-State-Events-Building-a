@@ -28,7 +28,11 @@ class App extends Component {
   componentDidMount() {}
 
   render() {
-    return <div className="playground">{this.renderBallOrButton()}</div>;
+    return (
+      <>
+        <div className="playground">{this.renderBallOrButton()}</div>
+      </>
+    );
   }
 }
 
