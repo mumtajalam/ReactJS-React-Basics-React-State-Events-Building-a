@@ -1,4 +1,5 @@
 import React, { Component, useState } from "react";
+import "../styles/App.css";
 
 class App extends Component {
   constructor(props) {
@@ -8,28 +9,27 @@ class App extends Component {
       posi: 0,
       ballPosition: { left: "0px" }
     };
-    this.renderChoice = this.renderBallorButton.Bind(this);
-    this.buttonClickHandler = this.buttonClickHandler.Bind(this);
+    this.renderChoice = this.renderBallOrButton.bind(this);
+    this.buttonClickHandler = this.buttonClickHandler.bind(this);
   }
 
   buttonClickHandler() {}
-
-  renderBallorButton() {
+  renderBallOrButton() {
     if (this.state.renderBall) {
       return <div className="ball" style={this.state.ballPosition}></div>;
     } else {
       return (
-        <button onClick={this.buttonClickHandler}>Click for one ball</button>
+        <button onClick={this.buttonClickHandler}>Click For One Ball</button>
       );
     }
   }
 
+  // bind ArrowRight keydown event
   componentDidMount() {}
+
   render() {
-    return;
-    <>
-      <div className="playground">{this.renderBallorButton()}</div>
-    </>;
+    return <div className="playground">{this.renderBallOrButton()}</div>;
   }
 }
+
 export default App;
